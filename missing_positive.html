@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Missing Positive</title>
+    </head>
+
+    <body>
+        <script>
+            function firtsMissingPositive (array) {
+                let minNumber = Math.min(...array);
+                //finding the minimum positive number in array
+                for (let i = 0; i <array.length; i ++){
+                    if (minNumber > 0) {
+                        break;
+                    } else {
+                        let index = array.indexOf(minNumber);
+                        array.splice(index, 1);
+                        minNumber = Math.min(...array);
+                    }
+                }
+
+                if (minNumber < 0) {
+                    console.log("zero is the first missing positive");
+                } else {
+                    let executed = false;
+                    for (let j = minNumber; j < minNumber + array.length; j ++) {
+                        executed = false;
+                        for (let i = 0; i <array.length; i ++){
+                            if (array[i] == j) {
+                                executed = true;
+                                break;
+                            }
+                        }
+                        if (!executed) {
+                            minNumber = j;
+                            break;
+                        }
+                    }
+                }
+                return minNumber;
+            }
+
+            let x = firtsMissingPositive([1, 2, 3, 4, 6 ,8]);
+            console.log(x);
+        </script>
+    </body>
+
+</html>
