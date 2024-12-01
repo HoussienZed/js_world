@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Rebuild Sentences</title>
+    </head>
+
+    <body>
+        <script>
+            function rebuildSentences(words, length) {
+                for(let i = 0; i < words.length; i++) {
+                    if (words[i].length != length[i]){
+                        let targetWord = String(words[i]);
+                        for (let j = 0; j < words[i].length - length[i]; j++){
+                            targetWord = targetWord.slice(0, -1);
+                        }
+                        words[i] = targetWord;
+                    }
+                }
+                let rebuiltSentence = words.join(" ");
+                return rebuiltSentence;
+            }
+
+            console.log(rebuildSentences(["the", "sky", "is", "blue"], [2, 2, 2, 4]));
+        </script>
+    </body>
+</html>
