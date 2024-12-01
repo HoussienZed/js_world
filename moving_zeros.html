@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Moving Zeros</title>
+    </head>
+
+    <body>
+        <script>
+            function moveZeros(array) {
+                let zeros = [];
+                let noZeros = [];
+                
+                for(let i = 0; i < array.length; i ++) {
+                    if (array[i] == 0){
+                        zeros.push(array[i]);
+                    } else {
+                        noZeros.push(array[i]);
+                    }
+                }
+                
+                let movedZerosArray = noZeros.concat(zeros);
+                return movedZerosArray;
+            }
+
+            console.log(moveZeros([0, 1, 0, 0, 2, 0, 0, 0, 3]));
+        </script>
+    </body>
+</html>
