@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Peaks In Array</title>
+    </head>
+
+    <body>
+        <script>
+            function findPeaks(array){
+                let peaksIndices = [];
+
+                if (array[0] > array[1]) { //assuming frist element is apeak
+                    peaksIndices.push(0);
+                }
+
+                for (let i = 1; i < array.length; i++) {
+                    if ((array[i] > array[i - 1]) && (array[i] > array[i + 1])){
+                        peaksIndices.push(i);
+                    }
+                }
+
+                return peaksIndices;
+            }
+
+            const x = [1, 2, 4, 3, 7, 4, 3, 2, 90, 6, 8, 7, 0, 2];
+            console.log(findPeaks(x));
+        </script>
+    </body>
+</html>
