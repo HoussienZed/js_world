@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Stock Pricing</title>
+    </head>
+    <body>
+        <script>
+            function maxProfit(prices) {
+                let buyingDay = 0;
+                let sellingDay = 1;
+                let highestProfit = prices[1] - prices[0];
+
+                for (let i = 0; i < prices.length; i++){
+                    for (let j = 0; j < prices.length; j ++) {
+                        if ((i < j) && (prices[j] - prices[i] > highestProfit)) {
+                            buyingDay = i;
+                            sellingDay = j;
+                            highestProfit = prices[j] - prices[i];
+                        }
+                    }
+                }
+                return [buyingDay, sellingDay, highestProfit];
+            }
+
+            let x = maxProfit([5, 7, 2]);
+            console.log("Buying day is: " + x[0]);
+            console.log("Selling day is: " + x[1]);
+            console.log("Highest profit is: " + x[2]);
+        </script>
+    </body>
+</html>
