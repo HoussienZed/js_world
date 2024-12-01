@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Over Lapping Intervals</title>
+    </head>
+
+    <body>
+        <script>
+            function overLappingIntervals(array) {
+                //comparing the first element of each subarray in order to sort them with respect to it
+                let sortedArray = [];
+                let arrayLength = array.length;
+                for(let i = 0; i < arrayLength; i++){
+                    let targetIndex = 0;
+                    for(let j = 1; j < array.length; j++){
+                        if (array[targetIndex][0] > array[j][0]){
+                            targetIndex = j;
+                        }
+                    }
+                    sortedArray.push(array[targetIndex]);
+                    array.splice(targetIndex, 1);
+                }
+                
+                return sortedArray;
+              /*   let merged = sortedArray[0];
+
+                for (let i = 1; i < array.length; i++){
+                    let mergedLength = merged.length;
+                    let lastMerged = merged[mergedLength - 1];
+                    if(lastMerged >= sortedArray[i][0]){
+                        if(lastMerged <= sortedArray[i][0]){
+                            lastMerged[1] = sortedArray[i][1];
+                        }else {
+                            continue;
+                        }
+                    } else {
+                        merged.push(sortedArray[i]);
+                    }
+                }
+            }*/
+            let x = [[9, 10], [3, 4], [4, 5], [7, 8]];
+            console.log(overLappingIntervals(x));
+            }
+        </script>
+    </body>
+</html>
