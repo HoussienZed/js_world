@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Diamond</title>
+    </head>
+    <body>
+        <script>
+            let x = prompt("Enter a number to print a diamond");
+
+            //printing the upper half of the diamond
+            for (let i = 0; i < x; i++) {
+                let top = " ";
+                for (let j = 0; j < x - i - 1; j++) {   
+                    top += " ";    
+                }
+                
+                for (let k = 0; k < 2 * i + 1; k++) {
+                    top += "*";
+                }
+                console.log(top);
+            }
+
+            //printing the lower half of the diamond
+            for (let i = 0; i < x - 1; i++) {
+                let bottom = " ";
+                for (let j = 0; j < i + 1; j++) {
+                    bottom += " ";
+                }
+                for (let k = 0; k < 2 * x - 2 * i -3; k++) {
+                    bottom += "*";
+                }
+                console.log(bottom);
+            }
+
+        </script>
+    </body>
+</html>
