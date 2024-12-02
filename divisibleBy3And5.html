@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Divisible by 3 or 5</title>
+    </head>
+    <body>
+        <script>
+            let x = prompt("Enter a number to check what numbers less, are divisible by 3 and 5: ");
+            let executed = false;
+            for (let i = 1; i <= x; i++){
+                if ((i % 3 == 0) && (i % 5 == 0)) {
+                    executed = true;
+                    console.log(i + (" is divisible by 3 and 5"));
+                }
+            }
+
+            if(!executed) {
+                console.log("There are no number less than " + x + " divisible by 3 and 5");
+            }
+        </script>
+    </body>
+</html>
